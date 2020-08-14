@@ -1,0 +1,470 @@
+@import "variables.scss";
+
+.detail-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s 0.5s ease-in-out;
+  z-index: 2;
+
+  #details {
+    opacity: 1;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: 0.2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "legend-to-plots weekly-songs" "all-time-graph weekly-songs" "song-comparison weekly-songs";
+    background-color: $Root__wrapper_background;
+
+    .Detail__all-time-graph {
+      grid-area: all-time-graph;
+      width: 100%;
+      height: 100%;
+
+      #all-time-title {
+        text-align: center;
+        padding: 0;
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-weight: bold;
+      }
+    }
+
+    .Detail__legend-to-plots {
+      grid-area: legend-to-plots;
+      height: 95px;
+      margin: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .global-checkbox-div {
+        margin-left: 15px;
+        background-color: #fff;
+        font-weight: bolder;
+        color: #282828;
+        height: 25px;
+        border-radius: 20px;
+        padding: 4px 16px 4px 12px;
+
+        /* Change the outline of unchecked boxes  */
+        /* (Checked box has green color from CDN) */
+        label:not(.is-checked) > span.mdl-checkbox__box-outline {
+          border: 2px solid rgba(#282828, 0.5);
+        }
+
+        label > span.mdl-checkbox__box-outline {
+          border-radius: 10px;
+        }
+
+        .global-checkbox-label {
+          font-size: 14px;
+        }
+      }
+    }
+
+    #center-legend-container {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .Detail__weekly-songs {
+      grid-area: weekly-songs;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+
+      #weekly-songs-title {
+        margin-top: 10px;
+        div {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          font-size: 16px;
+          line-height: 24px;
+          text-transform: uppercase;
+          letter-spacing: 0.16em;
+          font-weight: bold;
+        }
+
+        span {
+          margin: 0;
+          padding: 0;
+          position: relative;
+          font-size: 12px;
+          line-height: 24px;
+          text-transform: uppercase;
+          letter-spacing: 0.16em;
+          font-weight: bold;
+        }
+      }
+
+      nav {
+        width: 100%;
+        height: auto;
+        flex: 1 1 auto;
+
+        ul {
+          height: 100%;
+          text-align: left;
+          list-style: none;
+          padding-left: 0;
+          margin: 0;
+
+          li {
+            font-size: 14px;
+            line-height: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            display: inline-block;
+
+            div {
+              display: inline-block;
+              margin: 15px 32px 15px 0;
+              position: relative;
+              cursor: pointer;
+
+              &::before {
+                content: "";
+                height: 2px;
+                background-color: transparent;
+                width: 30px;
+                position: absolute;
+                display: block;
+                left: 50%;
+                bottom: -4px;
+                margin-left: -15px;
+                cursor: default;
+              }
+            }
+
+            .active {
+              color: #ffffff;
+
+              &::before {
+                background-color: $spotify_green_color;
+              }
+            }
+          }
+        }
+      }
+
+      #weekly-songs-list-window {
+        position: relative;
+        height: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: none;
+        flex: 1 1 auto;
+
+        .weekly-song-list-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          transition: opacity 0.25s ease-in-out;
+
+          .weekly-song-list {
+            opacity: 1;
+
+            ol {
+              padding-left: 20px;
+              cursor: pointer;
+              list-style: none;
+              padding-left: 0;
+              margin: 0;
+
+              li {
+                transition: background-color 0.1s linear;
+
+                &:hover {
+                  background-color: hsla(0, 0%, 100%, 0.1);
+                }
+
+                .song-entry-wrapper {
+                  flex: 1 1 0;
+                  height: 66px;
+                  padding-left: 15px;
+
+                  /* Color marker for selected songs */
+                  .before-selected-song {
+                    position: absolute;
+                    padding: 0;
+                    height: 66px;
+                    left: 0;
+                    top: inherit;
+                    width: 5px;
+                    content: "";
+                  }
+
+                  .song-name {
+                    font-size: 16px;
+                    line-height: 22px;
+                    letter-spacing: 0.015em;
+                    color: #ffffff;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding-top: 10px;
+                  }
+
+                  .artist-name {
+                    color: #ffffff;
+                    display: inline-block;
+                    opacity: 0.6;
+                    position: absolute;
+                    left: 15px;
+                  }
+
+                  .spotify-link {
+                    color: $spotify_green_color;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 10pt;
+                    position: absolute;
+                    right: 15px;
+
+                    i {
+                      padding-left: 6px;
+                    }
+
+                    &:hover {
+                      text-decoration: underline;
+                    }
+                  }
+                }
+              }
+
+              .noSelect {
+                cursor: not-allowed;
+                div {
+                  .song-name {
+                    color: #707070;
+                  }
+
+                  .artist-name {
+                    color: #505050;
+                  }
+
+                  .spotify-link {
+                    color: #0f5a29;
+                  }
+                }
+                &:hover {
+                  color: #707070;
+                  background-color: $Root__wrapper_background;
+                }
+              }
+            }
+          }
+        }
+
+        .weekly-song-list-wrapper-hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        &::-webkit-scrollbar {
+          width: 16px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border: 4px solid transparent;
+          border-radius: 16px;
+          background-clip: padding-box;
+          min-height: 30px;
+          background-color: rgba(55, 55, 55, 0.8);
+        }
+      }
+    }
+
+    .Detail__song-comparison {
+      grid-area: song-comparison;
+      width: 100%;
+      height: 100%;
+
+      #attr-barchart-title {
+        margin: 10px auto 0px auto;
+        text-align: center;
+        padding: 0;
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-weight: bold;
+      }
+
+      .attribute-text {
+        font-size: 9px;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-weight: bold;
+      }
+
+      #attr-barchart-wrapper {
+        height: calc(100% - 39px);
+      }
+    }
+  }
+}
+
+#attr-barchart-wrapper {
+  height: 100%;
+}
+
+.detail-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.selected-song {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+#legend-wrapper {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+}
+
+#country-legend-wrapper {
+  display: inline-block;
+}
+
+#song-legend-wrapper {
+  margin-left: -5px;
+  display: inline-block;
+}
+
+.legend-chip {
+  color: #fff;
+  background-color: #282828;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  height: 28px;
+  padding: 5px 10px 0px 10px;
+  margin: 0px 5px 5px 5px;
+  display: inline-block;
+
+  &.chip-inverted {
+    color: #000;
+  }
+}
+
+.legend-chip:hover {
+  background: #2d2d2d;
+}
+
+/* Return button (container and label) */
+#close-detail {
+  cursor: pointer;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0 12px 0 8px;
+  margin-bottom: 0;
+}
+#legend-return-label {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 30px;
+  }
+}
+
+.legend-chip-label {
+  max-width: 150px;
+  font-size: 14px;
+  font-weight: bolder;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.legend-chip-remove {
+  color: #ffffff88;
+  font-size: 20pt;
+  margin-left: 7.5px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.chip-remove-inverted {
+    color: #00000088;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.chart-element {
+  transition: opacity 0.4s ease;
+}
+
+/* Stripes for songs with non-inverted colors */
+@mixin song-stripes-normal {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    rgba(59, 59, 59, 0.3) 5px,
+    rgba(59, 59, 59, 0.3) 10px
+  ) !important;
+  margin: 0px;
+}
+/* Stripes for songs with inverted colors */
+@mixin song-stripes-inverted {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    rgba(255, 255, 255, 0.3) 5px,
+    rgba(255, 255, 255, 0.3) 10px
+  ) !important;
+  margin: 0px;
+}
+
+/* Stripes of the bar chart and chips (songs) - normal */
+.song-bar-normal .song-bar-stripes,
+.song-chip.chip-normal {
+  @include song-stripes-normal();
+}
+
+/* Stripes of the bar chart and chips (songs) - inverted */
+.song-bar-inverted .song-bar-stripes,
+.song-chip.chip-inverted {
+  @include song-stripes-inverted();
+}
+
+.song-chip-bg {
+  border-radius: 20px !important;
+  margin: 0px 5px 5px 5px;
+  display: inline-block;
+}

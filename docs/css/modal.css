@@ -1,0 +1,208 @@
+/*! viral-50 v0.0.1 | (c) 2020 Erik Båvenstrand | MIT License | https://github.com/ErikBavenstrand/DH2321-Spotify-Project */
+/* Modal Header */
+/* line 2, src/sass/modal.scss */
+.modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 64px;
+  padding: 10px;
+  background-color: black;
+  color: #b2b2b2;
+  border-radius: 2px 2px 0 0;
+}
+
+/* line 12, src/sass/modal.scss */
+.modal-header span {
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+
+/* line 15, src/sass/modal.scss */
+.modal-header h2 {
+  margin: 0;
+  padding: 4px 0 2px 20px;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* Modal Body */
+/* line 27, src/sass/modal.scss */
+.modal-body {
+  padding: 30px;
+  padding-top: 0;
+  border-radius: 0 0 2px 2px;
+  width: calc(100% - 60px);
+  height: calc(100% - 114px);
+  overflow-y: scroll;
+  color: #fff;
+}
+
+/* line 36, src/sass/modal.scss */
+.modal-body::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* line 39, src/sass/modal.scss */
+.modal-body::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background-clip: padding-box;
+  min-height: 30px;
+  background-color: rgba(220, 220, 220, 0.8);
+}
+
+/* line 47, src/sass/modal.scss */
+.modal-body .flex-teamlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-left: 24px;
+}
+
+/* line 53, src/sass/modal.scss */
+.modal-body .flex-teamlist a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 57, src/sass/modal.scss */
+.modal-body .flex-teamlist div {
+  margin-bottom: 20px;
+}
+
+/* line 59, src/sass/modal.scss */
+.modal-body .flex-teamlist div p {
+  margin: 0;
+  padding: 4px 0 2px 0;
+  position: relative;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 70, src/sass/modal.scss */
+.modal-body .flex-teamlist div img {
+  border: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+}
+
+/* line 77, src/sass/modal.scss */
+.modal-body .flex-teamlist div ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 81, src/sass/modal.scss */
+.modal-body .flex-teamlist div ul li {
+  position: relative;
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 93, src/sass/modal.scss */
+.modal-body img {
+  border: 1px solid black;
+  width: calc(100% - 20px);
+}
+
+/* line 98, src/sass/modal.scss */
+#information-button,
+#background-button,
+#team-button {
+  cursor: pointer;
+}
+
+/* line 104, src/sass/modal.scss */
+.information-close,
+.background-close,
+.team-close {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Modal Content */
+/* line 112, src/sass/modal.scss */
+.modal-content {
+  display: none;
+  position: absolute;
+  background-color: #3a3a3a;
+  z-index: 99;
+  top: 8%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 40%;
+  height: 80% !important;
+  border-radius: 2px;
+  height: auto;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+/* line 131, src/sass/modal.scss */
+.modal-body h2 {
+  margin: 0;
+  margin-top: 30px;
+  padding: 4px 0 2px 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 143, src/sass/modal.scss */
+.modal-body p {
+  margin: 0;
+  padding: 4px 0 2px 24px;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 8%;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 8%;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,57 @@
+/*! viral-50 v0.0.1 | (c) 2020 Erik Båvenstrand | MIT License | https://github.com/ErikBavenstrand/DH2321-Spotify-Project */
+/* line 3, src/sass/worldmap.scss */
+.world-detail {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* line 8, src/sass/worldmap.scss */
+.world-detail .world-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 12, src/sass/worldmap.scss */
+.world-detail .world-wrapper #world {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 16, src/sass/worldmap.scss */
+.world-detail .world-wrapper #world svg {
+  width: 100%;
+  height: 100%;
+  background-color: #3a3a3a;
+  position: absolute;
+}
+
+/* line 23, src/sass/worldmap.scss */
+.world-detail .world-wrapper #world svg g path {
+  -webkit-transition: fill 0.4s ease-in-out;
+  transition: fill 0.4s ease-in-out;
+}
+
+/* line 28, src/sass/worldmap.scss */
+.world-detail .world-wrapper #world svg .defaultCountry {
+  fill: #121212;
+  stroke: #b3b3b3;
+  stroke-width: 0.1;
+}
+
+/* line 35, src/sass/worldmap.scss */
+.world-detail .world-wrapper #world svg .countryHighlight {
+  stroke: rgba(255, 255, 255, 0.7) !important;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+/* line 40, src/sass/worldmap.scss */
+.world-detail .world-wrapper #world svg .countryHighlight:hover {
+  cursor: pointer;
+}
+
+/* line 45, src/sass/worldmap.scss */
+.world-detail .world-wrapper #world svg .countryIsInCurrentData {
+  stroke: #121212;
+}

@@ -1,0 +1,46 @@
+@import "variables.scss";
+
+.Loading__wrapper {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 25% 10% 1fr;
+  background-color: rgba($Root__wrapper_background, 0.9);
+  z-index: 100;
+
+  /* The animated Viral50 logo */
+  #logo {
+    align-self: center;
+    display: flex;
+    grid-area: 2 / 1 / 3;
+    height: 100%;
+    opacity: 1;
+  }
+  /* 'LOADING' text */
+  h2 {
+    z-index: 101;
+    display: flex;
+    align-self: flex-start;
+    grid-area: 3 / 1 / 5;
+    overflow: visible;
+    font-weight: bolder;
+    color: darken($spotify_green_color, 10);
+    transform: translate(-5%, 0);
+  }
+}
+
+/* Animation of drawing the line path of the chart/graph */
+@keyframes logoPulse {
+  from {
+    opacity: 1;
+    height: 100%;
+  }
+  to {
+    opacity: 0.8;
+    height: 90%;
+  }
+}

@@ -1,0 +1,98 @@
+@import "modal.scss";
+@import "worldmap.scss";
+@import "legend.scss";
+@import "time_anim_control.scss";
+@import "timeslider.scss";
+@import "attr_list.scss";
+@import "info_button.scss";
+@import "country_list.scss";
+@import "detailview.scss";
+@import "linechart.scss";
+@import "variables.scss";
+@import "tooltip.scss";
+@import "loading.scss";
+
+/* Layout */
+html,
+body {
+  margin: 0;
+  min-width: 800px;
+  min-height: 600px;
+  display: flex;
+  overscroll-behavior-y: none;
+  overflow: hidden;
+  height: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+  color: $body_color;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.loading {
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+}
+
+.Root__wrapper {
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "country-list main-view" "time-anim-control timeslider-bar";
+  background-color: $Root__wrapper_background;
+  z-index: 0;
+
+  .Root__country-list,
+  .Root__main-view {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+  }
+
+  .Root__country-list {
+    will-change: transform;
+    grid-area: country-list;
+    width: 250px;
+    z-index: 3;
+    background-color: $Root__country-list_background;
+  }
+
+  .Root__main-view {
+    grid-area: main-view;
+    width: 100%;
+    position: relative;
+
+    .main-view-wrapper {
+      flex: 1;
+      min-height: 0;
+    }
+  }
+
+  .Root__time-anim-control {
+    grid-area: time-anim-control;
+    width: 100%;
+    background-color: $timeslider-bar-wrapper_background;
+    color: $body_color;
+  }
+
+  .Root__timeslider-bar {
+    grid-area: timeslider-bar;
+    width: 100%;
+    z-index: 4;
+  }
+}

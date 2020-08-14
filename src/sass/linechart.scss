@@ -1,0 +1,107 @@
+@import "variables.scss";
+
+/* Make the linechart container fill the entire grid container */
+#linechart {
+  width: 100%;
+  height: calc(100% - 24px);
+}
+
+/* Remove the y-axis line*/
+.y.axis > .domain {
+  display: none;
+}
+
+/* Set all the axis ticks and text to lower opacity to match y-gridlines */
+.axis > * > text {
+  color: rgba($body_color, 0.7);
+}
+
+/* The horizontal gridlines, the tick lines, and the x-axis line */
+.y-gridline,
+.axis > * > line,
+.x.axis > .domain {
+  stroke: rgba($body_color, 0.1);
+  stroke-width: 1px;
+}
+
+/* The line itself that illustrates the path between data points */
+.line {
+  fill: none;
+  //stroke: $spotify_green_color;
+  stroke-width: 1px;
+
+  /* Adds animation to the path when data is loaded */
+  &.line-loaded {
+    stroke-dasharray: 10000;
+    stroke-dashoffset: 10000;
+    animation: drawline 2.5s ease-in forwards;
+    animation-delay: 200ms;
+  }
+}
+
+/* The vertical line that helps mark the correct data point */
+.chart-marker {
+  fill: rgba(#b2b2b2, 40);
+}
+
+/* The circles that represent each data point */
+.chart-dot {
+  /* Styling deleted to let it be dynamic */
+  /*fill: $spotify_green_color;*/
+}
+.chart-dot.nonfocus {
+  opacity: 0.5;
+  r: 3px;
+  transition: opacity 0.4s ease, r 0.4s ease;
+}
+.chart-dot.focus {
+  opacity: 0.8;
+  r: 6px;
+  transition: opacity 0.8s ease, r 0.8s ease;
+  transition-delay: 0.05s;
+  stroke-width: 1px;
+}
+
+/* Styling of hover tooltip */
+.chart-tooltip {
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 50px;
+  padding: 2px;
+  font: 9px sans-serif;
+  background: $body_color;
+  color: darken($spotify_green_color, 40);
+  border: 1px #222 solid;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Styling of everything in the chart */
+.chart-legend > text {
+  font-size: 11px;
+  fill: $body_color;
+}
+
+.chart-legend-box {
+  stroke-linecap: round;
+  stroke-width: 1px;
+  stroke: rgba($body_color, 0.3);
+  fill: rgba($body_color, 0);
+  rx: 10px;
+}
+
+.chart-legend-dot {
+  fill: $spotify_green_color;
+}
+
+/* Animation of drawing the line path of the chart/graph */
+@keyframes drawline {
+  from {
+    stroke-dashoffset: 10000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

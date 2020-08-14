@@ -1,0 +1,46 @@
+@import "variables.scss";
+
+#week-label {
+  margin-top: 10px;
+  text-align: center;
+  margin: 0;
+  padding: 12px 0 0 0;
+  position: relative;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #fff;
+}
+
+#time-anim-control-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.time-anim-button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  fill: $body_color;
+
+  &:hover {
+    fill: #ffffff;
+  }
+
+  &:active {
+    fill: $body_color;
+  }
+}
+
+#play-pause-button {
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
+
+  &:active {
+    transform: scale(1, 1);
+  }
+}

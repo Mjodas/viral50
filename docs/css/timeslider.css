@@ -1,0 +1,182 @@
+/*! viral-50 v0.0.1 | (c) 2020 Erik Båvenstrand | MIT License | https://github.com/ErikBavenstrand/DH2321-Spotify-Project */
+/* line 3, src/sass/timeslider.scss */
+.timeslider-bar-wrapper {
+  min-width: 620px;
+  background-color: #222;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+}
+
+/* line 10, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 90px;
+  padding: 0 64px;
+}
+
+/* line 18, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper-test {
+  visibility: hidden;
+  position: relative;
+}
+
+/* line 23, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* line 50, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider {
+  width: 100%;
+  top: -2px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0;
+  -webkit-appearance: none;
+  z-index: 10;
+}
+
+/* line 60, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 0 !important;
+  z-index: 10;
+}
+
+/* line 65, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 0 !important;
+  z-index: 10;
+}
+
+/* line 69, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider::-ms-thumb {
+  width: 18px;
+  height: 18px;
+  margin: -8px 0 0;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 0 !important;
+  z-index: 10;
+}
+
+/* line 74, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  z-index: 10;
+}
+
+/* line 78, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  z-index: 10;
+}
+
+/* line 82, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  z-index: 10;
+}
+
+/* line 86, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider:focus {
+  background: none;
+  outline: none;
+}
+
+/* line 92, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* line 103, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider-labels {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 108, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider-labels li {
+  position: absolute;
+  color: #b2b2b2;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* line 115, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider-labels li::before {
+  position: absolute;
+  top: -13px;
+  right: 0;
+  left: 0;
+  content: "";
+  margin: 0 auto;
+  width: 12px;
+  height: 12px;
+  background: #595959;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* line 130, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider-labels .active {
+  color: #ffffff;
+}
+
+/* line 134, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider-labels .active::before {
+  background: #1ed760;
+}
+
+/* line 138, src/sass/timeslider.scss */
+.timeslider-bar-wrapper .timeslider-bar #slider-wrapper .slider-labels .active.selected::before {
+  display: none;
+}

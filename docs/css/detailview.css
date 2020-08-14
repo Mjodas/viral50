@@ -1,0 +1,551 @@
+/*! viral-50 v0.0.1 | (c) 2020 Erik Båvenstrand | MIT License | https://github.com/ErikBavenstrand/DH2321-Spotify-Project */
+/* line 3, src/sass/detailview.scss */
+.detail-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: opacity 0.5s 0.5s ease-in-out;
+  transition: opacity 0.5s 0.5s ease-in-out;
+  z-index: 2;
+}
+
+/* line 12, src/sass/detailview.scss */
+.detail-wrapper #details {
+  opacity: 1;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "legend-to-plots weekly-songs" "all-time-graph weekly-songs" "song-comparison weekly-songs";
+  background-color: #121212;
+}
+
+/* line 24, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__all-time-graph {
+  grid-area: all-time-graph;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 29, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__all-time-graph #all-time-title {
+  text-align: center;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 41, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__legend-to-plots {
+  grid-area: legend-to-plots;
+  height: 95px;
+  margin: 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+/* line 49, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__legend-to-plots .global-checkbox-div {
+  margin-left: 15px;
+  background-color: #fff;
+  font-weight: bolder;
+  color: #282828;
+  height: 25px;
+  border-radius: 20px;
+  padding: 4px 16px 4px 12px;
+  /* Change the outline of unchecked boxes  */
+  /* (Checked box has green color from CDN) */
+}
+
+/* line 60, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__legend-to-plots .global-checkbox-div label:not(.is-checked) > span.mdl-checkbox__box-outline {
+  border: 2px solid rgba(40, 40, 40, 0.5);
+}
+
+/* line 64, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__legend-to-plots .global-checkbox-div label > span.mdl-checkbox__box-outline {
+  border-radius: 10px;
+}
+
+/* line 68, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__legend-to-plots .global-checkbox-div .global-checkbox-label {
+  font-size: 14px;
+}
+
+/* line 74, src/sass/detailview.scss */
+.detail-wrapper #details #center-legend-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 85, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs {
+  grid-area: weekly-songs;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+/* line 92, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-title {
+  margin-top: 10px;
+}
+
+/* line 94, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-title div {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 106, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-title span {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 118, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs nav {
+  width: 100%;
+  height: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+/* line 123, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs nav ul {
+  height: 100%;
+  text-align: left;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* line 130, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs nav ul li {
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  display: inline-block;
+}
+
+/* line 137, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs nav ul li div {
+  display: inline-block;
+  margin: 15px 32px 15px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 143, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs nav ul li div::before {
+  content: "";
+  height: 2px;
+  background-color: transparent;
+  width: 30px;
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: -4px;
+  margin-left: -15px;
+  cursor: default;
+}
+
+/* line 157, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs nav ul li .active {
+  color: #ffffff;
+}
+
+/* line 160, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs nav ul li .active::before {
+  background-color: #1ed760;
+}
+
+/* line 168, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window {
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+/* line 176, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+
+/* line 184, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list {
+  opacity: 1;
+}
+
+/* line 187, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol {
+  padding-left: 20px;
+  cursor: pointer;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* line 194, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li {
+  -webkit-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+}
+
+/* line 197, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* line 201, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li .song-entry-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  height: 66px;
+  padding-left: 15px;
+  /* Color marker for selected songs */
+}
+
+/* line 207, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li .song-entry-wrapper .before-selected-song {
+  position: absolute;
+  padding: 0;
+  height: 66px;
+  left: 0;
+  top: inherit;
+  width: 5px;
+  content: "";
+}
+
+/* line 217, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li .song-entry-wrapper .song-name {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.015em;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 10px;
+}
+
+/* line 228, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li .song-entry-wrapper .artist-name {
+  color: #ffffff;
+  display: inline-block;
+  opacity: 0.6;
+  position: absolute;
+  left: 15px;
+}
+
+/* line 236, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li .song-entry-wrapper .spotify-link {
+  color: #1ed760;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10pt;
+  position: absolute;
+  right: 15px;
+}
+
+/* line 244, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li .song-entry-wrapper .spotify-link i {
+  padding-left: 6px;
+}
+
+/* line 248, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol li .song-entry-wrapper .spotify-link:hover {
+  text-decoration: underline;
+}
+
+/* line 255, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol .noSelect {
+  cursor: not-allowed;
+}
+
+/* line 258, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol .noSelect div .song-name {
+  color: #707070;
+}
+
+/* line 262, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol .noSelect div .artist-name {
+  color: #505050;
+}
+
+/* line 266, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol .noSelect div .spotify-link {
+  color: #0f5a29;
+}
+
+/* line 270, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper .weekly-song-list ol .noSelect:hover {
+  color: #707070;
+  background-color: #121212;
+}
+
+/* line 279, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window .weekly-song-list-wrapper-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 284, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* line 287, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__weekly-songs #weekly-songs-list-window::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background-clip: padding-box;
+  min-height: 30px;
+  background-color: rgba(55, 55, 55, 0.8);
+}
+
+/* line 297, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__song-comparison {
+  grid-area: song-comparison;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 302, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__song-comparison #attr-barchart-title {
+  margin: 10px auto 0px auto;
+  text-align: center;
+  padding: 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 314, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__song-comparison .attribute-text {
+  font-size: 9px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 322, src/sass/detailview.scss */
+.detail-wrapper #details .Detail__song-comparison #attr-barchart-wrapper {
+  height: calc(100% - 39px);
+}
+
+/* line 329, src/sass/detailview.scss */
+#attr-barchart-wrapper {
+  height: 100%;
+}
+
+/* line 333, src/sass/detailview.scss */
+.detail-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 338, src/sass/detailview.scss */
+.selected-song {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* line 342, src/sass/detailview.scss */
+#legend-wrapper {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+}
+
+/* line 348, src/sass/detailview.scss */
+#country-legend-wrapper {
+  display: inline-block;
+}
+
+/* line 352, src/sass/detailview.scss */
+#song-legend-wrapper {
+  margin-left: -5px;
+  display: inline-block;
+}
+
+/* line 357, src/sass/detailview.scss */
+.legend-chip {
+  color: #fff;
+  background-color: #282828;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  height: 28px;
+  padding: 5px 10px 0px 10px;
+  margin: 0px 5px 5px 5px;
+  display: inline-block;
+}
+
+/* line 367, src/sass/detailview.scss */
+.legend-chip.chip-inverted {
+  color: #000;
+}
+
+/* line 372, src/sass/detailview.scss */
+.legend-chip:hover {
+  background: #2d2d2d;
+}
+
+/* Return button (container and label) */
+/* line 377, src/sass/detailview.scss */
+#close-detail {
+  cursor: pointer;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0 12px 0 8px;
+  margin-bottom: 0;
+}
+
+/* line 384, src/sass/detailview.scss */
+#legend-return-label {
+  width: 30px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 390, src/sass/detailview.scss */
+#legend-return-label i {
+  font-size: 30px;
+}
+
+/* line 395, src/sass/detailview.scss */
+.legend-chip-label {
+  max-width: 150px;
+  font-size: 14px;
+  font-weight: bolder;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 406, src/sass/detailview.scss */
+.legend-chip-remove {
+  color: #ffffff88;
+  font-size: 20pt;
+  margin-left: 7.5px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* line 414, src/sass/detailview.scss */
+.legend-chip-remove:hover {
+  color: #fff;
+}
+
+/* line 418, src/sass/detailview.scss */
+.legend-chip-remove.chip-remove-inverted {
+  color: #00000088;
+}
+
+/* line 421, src/sass/detailview.scss */
+.legend-chip-remove.chip-remove-inverted:hover {
+  color: #000;
+}
+
+/* line 427, src/sass/detailview.scss */
+.chart-element {
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+
+/* Stripes for songs with non-inverted colors */
+/* Stripes for songs with inverted colors */
+/* Stripes of the bar chart and chips (songs) - normal */
+/* line 455, src/sass/detailview.scss */
+.song-bar-normal .song-bar-stripes,
+.song-chip.chip-normal {
+  background: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(59, 59, 59, 0.3) 5px, rgba(59, 59, 59, 0.3) 10px) !important;
+  margin: 0px;
+}
+
+/* Stripes of the bar chart and chips (songs) - inverted */
+/* line 461, src/sass/detailview.scss */
+.song-bar-inverted .song-bar-stripes,
+.song-chip.chip-inverted {
+  background: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.3) 5px, rgba(255, 255, 255, 0.3) 10px) !important;
+  margin: 0px;
+}
+
+/* line 466, src/sass/detailview.scss */
+.song-chip-bg {
+  border-radius: 20px !important;
+  margin: 0px 5px 5px 5px;
+  display: inline-block;
+}

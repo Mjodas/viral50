@@ -1,0 +1,36 @@
+/*! viral-50 v0.0.1 | (c) 2020 Erik Båvenstrand | MIT License | https://github.com/ErikBavenstrand/DH2321-Spotify-Project */
+/* line 4, src/sass/info_button.scss */
+#information-button-wrapper h2 {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 0 2px 10px;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+}
+
+/* line 16, src/sass/info_button.scss */
+#information-button-wrapper hr {
+  margin: 0;
+  border-color: #282828;
+}
+
+/* line 22, src/sass/info_button.scss */
+#information-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% - 48px);
+  padding: 8px 24px 8px 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 28, src/sass/info_button.scss */
+#information-button:hover {
+  color: #ffffff;
+}

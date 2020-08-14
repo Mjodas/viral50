@@ -1,0 +1,72 @@
+/*! viral-50 v0.0.1 | (c) 2020 Erik Båvenstrand | MIT License | https://github.com/ErikBavenstrand/DH2321-Spotify-Project */
+/* line 3, src/sass/legend.scss */
+#legend-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+  width: 50%;
+  z-index: 1;
+  font-size: 10pt;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+/* line 17, src/sass/legend.scss */
+#legend-container #legend-label-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
+/* line 26, src/sass/legend.scss */
+#legend-container #legend-label-container .legend-label {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+/* line 31, src/sass/legend.scss */
+#legend-container #legend-scale-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 10px;
+  margin-top: 5px;
+  height: 20px;
+  border: 1px solid #b2b2b2;
+}
+
+/* line 40, src/sass/legend.scss */
+#legend-container #legend-scale-container .legend-scale-segment {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
